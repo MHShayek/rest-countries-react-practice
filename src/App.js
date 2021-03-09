@@ -1,11 +1,36 @@
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './components/Home/Home';
+import NoMatch from './NoMatch/NoMatch';
+import CountryDetail from './components/CountryDetail/CountryDetail';
+
+
 
 function App() {
+
   return (
-    <div>
-    <h1>Rest countries react practice</h1>
-    <h2>Something is better than nothing.</h2>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/home" >
+          <Home></Home>
+        </Route>
+        <Route path="/country/:countryCode" >
+          <CountryDetail></CountryDetail>
+        </Route>
+        <Route exact  path="/" >
+          <Home />
+        </Route>
+        <Route path="*">
+          <NoMatch/>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

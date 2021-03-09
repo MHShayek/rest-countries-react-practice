@@ -1,0 +1,12 @@
+.countryStyle{
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: lightcyan;
+}
+.countryStyle img{
+     width: 200px;
+     height: auto;
+}
